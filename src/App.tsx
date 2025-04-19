@@ -1,14 +1,13 @@
-import './App.css'
-import Header from './components/Header'
+import SideMenu from './components/SideMenu'
 import Dashboard from './pages/Dashboard'
 
 const App = () => {
 
   return (
-    <>
-      <Header/>
+    <main className='bg-bg-primary flex h-screen font-primary text-text-primary'>
+      <SideMenu/>
       <Dashboard/>
-    </>
+    </main>
   )
 }
 

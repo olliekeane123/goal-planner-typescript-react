@@ -1,20 +1,19 @@
-import { type GoalType } from "../pages/Dashboard"
+import { type GoalType } from "../pages/Dashboard";
 
-type GoalProps =  GoalType & {
-    onDeleteGoal: (id:number) => void
-}
+type GoalProps = GoalType & {
+  onDeleteGoal: (id: number) => void;
+};
 
-const Goal = ({title, description, id, onDeleteGoal}: GoalProps) => {
+const Goal = ({ title, description, id, onDeleteGoal }: GoalProps) => {
+  return (
+    <article className="bg-accent-brown h-60 w-32 border">
+      <div>
+        <h2>{title}</h2>
+        <p>{description}</p>
+      </div>
+      <button onClick={() => onDeleteGoal(id)}>Delete</button>
+    </article>
+  );
+};
 
-    return (
-        <article className='goal'>
-            <div>
-                <h2>{title}</h2>
-                <p>{description}</p>
-            </div>
-            <button onClick={() => onDeleteGoal(id)}>Delete</button>
-        </article>
-    )
-}
-
-export default Goal
+export default Goal;
