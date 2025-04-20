@@ -1,6 +1,6 @@
 const SideMenu = () => {
     return (
-        <aside className="bg-bg-grey h-lvh w-16 md:w-100 flex flex-col items-center p-8">
+        <aside className="bg-bg-grey w-16 md:w-80 flex flex-col items-center p-8">
             <h1 className="text-5xl font-bold hidden md:block">echelon</h1>
             <section>
                 <h3>Tasks</h3>

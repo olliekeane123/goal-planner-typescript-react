@@ -20,7 +20,7 @@ const GoalList = ({goals, onDeleteGoal }:GoalListProps) => {
         return (
             <>
                 {warningBox}
-                <ul className="goal-list">
+                <ul className="flex flex-wrap p-8 space-x-8 space-y-8 ">
                     {goals.map((goal) => {
                         return (
                             <li key={goal.id}>

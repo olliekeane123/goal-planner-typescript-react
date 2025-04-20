@@ -28,38 +28,73 @@ const NewGoal = ({ onAddGoal }: NewGoalProps) => {
 
   return (
     <div
-      className={`bg-bg-primary rounded-sm absolute inset-0 m-auto flex h-1/2 w-1/3 min-w-120 flex-col items-center ${toggleActive ? "block" : "hidden"}`}
+      className={`bg-bg-primary absolute top-1/2 left-1/2 flex w-11/12 max-w-4xl  -translate-x-1/2 -translate-y-1/2 flex-col items-center rounded-lg px-12 py-16 shadow-xl ${toggleActive ? "block" : "hidden"}`}
     >
       <button
         onClick={handleIsActive}
-        className="bg-accent-green rounded-sm mt-1 mr-1 flex h-6 w-6 cursor-pointer items-center justify-center self-end"
+        className="bg-accent-green hover:bg-opacity-90 absolute top-4 right-4 cursor-pointer rounded-md p-2 text-white transition-colors"
       >
-        <span>X</span>
+        <span className="sr-only">Close</span>
+        <svg
+          className="h-5 w-5"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M6 18L18 6M6 6l12 12"
+          />
+        </svg>
       </button>
-      <h2 className="mt-10 mb-20 text-5xl font-bold">What's your goal?</h2>
-      <form onSubmit={handleSubmit} autoComplete="off" className="flex w-9/10 flex-col gap-8">
-        <div className="">
-          <label htmlFor="goal" className="block text-xl font-semibold text-accent-brown">
+      <h2 className="mb-8 text-center text-3xl font-bold md:text-4xl">
+        What's your goal?
+      </h2>
+      <form
+        onSubmit={handleSubmit}
+        autoComplete="off"
+        className="w-full space-y-6"
+      >
+        <div className="w-full">
+          <label
+            htmlFor="goal"
+            className="text-accent-brown block text-xl font-semibold"
+          >
             Your Goal
           </label>
           <input
             id="goal"
             type="text"
             ref={goal}
-            className="block w-19/20 border-3 border-bg-grey focus:ring-3 ring-accent-brown outline-0 p-1 text-2xl rounded-sm "
+            className="border-bg-grey focus:border-accent-green focus:ring-accent-green focus:ring-opacity-50 w-full rounded-md border-2 px-4 py-2 text-lg transition-colors outline-none focus:ring"
+            placeholder="Enter your goal"
           />
         </div>
         <div>
-          <label htmlFor="description" className="block text-xl font-semibold text-accent-brown">
+          <label
+            htmlFor="description"
+            className="text-accent-brown block text-xl font-semibold"
+          >
             Description
           </label>
           <textarea
             id="description"
             ref={description}
-            className="block w-19/20 min-h-40 border border-bg-grey focus:ring-3 ring-accent-brown outline-none p-1 text-2xl rounded-sm overflow-visible"
+            rows={4}
+            className="border-bg-grey focus:border-accent-green focus:ring-accent-green focus:ring-opacity-50 w-full resize-none rounded-md border-2 px-4 py-2 text-lg transition-colors outline-none focus:ring"
+            placeholder="Describe your goal in detail"
           />
         </div>
-        <button className="self-center text-2xl">Add Goal</button>
+        <div className="flex justify-center pt-4">
+          <button
+            type="submit"
+            className="bg-accent-green hover:bg-accent-brown cursor-pointer rounded-md px-8 py-3 text-lg font-semibold text-white transition-colors"
+          >
+            Add Goal
+          </button>
+        </div>
       </form>
     </div>
   );

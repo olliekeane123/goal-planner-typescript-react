@@ -30,7 +30,7 @@ const Dashboard = () => {
   };
 
   return (
-    <section className="ml-4 h-full flex flex-col items-start w-full">
+    <section className="md:ml-4 h-auto flex flex-col items-start w-full">
       <Header />
       <section className="bg-bg-sand block flex-grow w-full relative">
         <NewGoal onAddGoal={handleAddGoal} />
