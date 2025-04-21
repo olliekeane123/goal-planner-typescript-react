@@ -1,7 +1,10 @@
 const SideMenu = () => {
     return (
         <aside className="bg-bg-grey w-16 md:w-80 flex flex-col items-center p-8">
-            <h1 className="text-5xl font-bold hidden md:block">echelon</h1>
+            <div id="logo" className="relative w-48 text-center">
+                <h1 className="text-5xl font-logo hidden md:block bottom-0.5 relative z-100">echelon</h1>
+                <div className=" h-4 w-48 bg-accent-green absolute bottom-0 z-0"></div>
+            </div>
             <section>
                 <h3>Tasks</h3>
                 <ul>
